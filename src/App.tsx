@@ -65,7 +65,7 @@ export default function App() {
       <header className="mb-12 border-b border-outline pb-8 flex items-center gap-6">
         <img src="https://res.cloudinary.com/djmo7ydpm/image/upload/v1776870967/logo-puerto_2xaaaaaaaaa_olrchx.png" alt="Puerto Columbo Logo" className="h-20 w-auto" />
         <div>
-          <h1 className="text-4xl md:text-5xl font-headline tracking-tight text-primary uppercase">Puerto Columbo VALPARAÍSO</h1>
+          <h1 className="text-4xl md:text-5xl font-headline tracking-tight text-primary uppercase">Puerto Columbo San Antonio</h1>
           <p className="text-xs uppercase tracking-[0.2em] text-on-surface-variant mt-3">Sistema de Control Operativo</p>
         </div>
       </header>
