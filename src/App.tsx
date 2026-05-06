@@ -58,24 +58,24 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen bg-background font-body text-on-surface p-8 md:p-16 max-w-5xl mx-auto">
-      <header className="mb-12 border-b border-outline pb-8 flex items-center gap-6">
-        <img src="https://res.cloudinary.com/djmo7ydpm/image/upload/v1776870967/logo-puerto_2xaaaaaaaaa_olrchx.png" alt="Puerto Columbo Logo" className="h-20 w-auto" />
+    <div className="min-h-screen bg-background font-body text-on-surface p-4 sm:p-8 md:p-16 max-w-5xl mx-auto">
+      <header className="mb-12 border-b border-outline pb-8 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+        <img src="https://res.cloudinary.com/djmo7ydpm/image/upload/v1776870967/logo-puerto_2xaaaaaaaaa_olrchx.png" alt="Puerto Columbo Logo" className="h-16 sm:h-20 w-auto" />
         <div>
-          <h1 className="text-4xl md:text-5xl font-headline tracking-tight text-primary uppercase">Puerto Columbo San Antonio</h1>
-          <p className="text-xs uppercase tracking-[0.2em] text-on-surface-variant mt-3">Sistema de Control Operativo</p>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-headline tracking-tight text-primary uppercase">Puerto Columbo San Antonio</h1>
+          <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-on-surface-variant mt-2 sm:mt-3">Sistema de Control Operativo</p>
         </div>
       </header>
 
       {/* Preview Modal */}
       {previewUrl && (
-        <div className="fixed inset-0 z-50 bg-background/80 flex items-center justify-center p-4">
-          <div className="bg-surface w-full max-w-4xl h-[80vh] border border-outline p-4 relative">
+        <div className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center sm:p-4">
+          <div className="bg-surface w-full h-full sm:h-[90vh] sm:max-w-5xl border-x sm:border border-outline p-2 sm:p-4 relative">
             <button 
               onClick={() => setPreviewUrl(null)} 
-              className="absolute top-2 right-2 px-4 py-2 bg-primary text-on-primary text-xs uppercase"
+              className="absolute top-2 right-2 z-10 px-4 py-3 bg-primary text-on-primary text-xs uppercase font-bold shadow-lg"
             >
-              Cerrar Vista Previa
+              Cerrar
             </button>
             {(() => {
               let finalUrl = previewUrl;
@@ -111,11 +111,11 @@ export default function App() {
         />
       </div>
 
-      <div className="flex gap-8 mb-10 border-b border-outline">
+      <div className="flex gap-4 sm:gap-8 mb-10 border-b border-outline">
         <button
-          className={`pb-4 text-xs md:text-sm uppercase tracking-widest transition-colors ${
+          className={`flex-1 sm:flex-none pb-4 text-xs md:text-sm uppercase tracking-widest transition-colors font-bold ${
             activeTab === 'procedures' 
-              ? 'text-primary border-b border-primary' 
+              ? 'text-primary border-b-2 border-primary' 
               : 'text-on-surface-variant hover:text-primary'
           }`}
           onClick={() => setActiveTab('procedures')}
@@ -123,9 +123,9 @@ export default function App() {
           Procedimientos
         </button>
         <button
-          className={`pb-4 text-xs md:text-sm uppercase tracking-widest transition-colors ${
+          className={`flex-1 sm:flex-none pb-4 text-xs md:text-sm uppercase tracking-widest transition-colors font-bold ${
             activeTab === 'checklists' 
-              ? 'text-primary border-b border-primary' 
+              ? 'text-primary border-b-2 border-primary' 
               : 'text-on-surface-variant hover:text-primary'
           }`}
           onClick={() => setActiveTab('checklists')}
@@ -194,14 +194,14 @@ function ItemCard({ title, category, date, type, steps, pdfUrl, onPreview }: { t
           </div>
         </div>
         
-        <div className="flex items-center gap-3 mt-4 sm:mt-0">
+        <div className="flex items-center gap-2 mt-4 sm:mt-0 ml-auto">
           {pdfUrl && (
             <button 
               onClick={() => onPreview && onPreview(pdfUrl)}
-              className="p-3 border border-outline text-primary hover:bg-surface-container-highest transition-colors" 
+              className="p-4 border border-outline text-primary hover:bg-surface-container-highest transition-colors active:bg-primary/10" 
               title="Vista previa"
             >
-              <Eye className="w-4 h-4" />
+              <Eye className="w-5 h-5" />
             </button>
           )}
 
@@ -211,20 +211,20 @@ function ItemCard({ title, category, date, type, steps, pdfUrl, onPreview }: { t
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 border border-outline text-primary hover:bg-surface-container-highest transition-colors" 
+              className="p-4 border border-outline text-primary hover:bg-surface-container-highest transition-colors active:bg-primary/10" 
               title="Descargar"
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-5 h-5" />
             </a>
           )}
 
           {!pdfUrl && (
             <button 
-              className="p-3 border border-outline text-primary hover:bg-surface-container-highest transition-colors" 
+              className="p-4 border border-outline text-primary hover:bg-surface-container-highest transition-colors active:bg-primary/10" 
               onClick={() => setIsExpanded(!isExpanded)}
               title={isExpanded ? "Contraer" : "Expandir"}
             >
-              {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+              {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
             </button>
           )}
 
