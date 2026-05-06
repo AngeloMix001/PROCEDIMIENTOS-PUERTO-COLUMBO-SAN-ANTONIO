@@ -11,11 +11,8 @@ import {
   ChevronUp,
   Building
 } from 'lucide-react';
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// Removed react-pdf imports as we now use iframes for better compatibility with Google Docs
 
 const proceduresData = [
   { id: 1, title: "Procedimientos Gate Control", category: "Gate Control", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Verificar...", "Paso 2: Confirmar..."], pdfUrl: "https://docs.google.com/document/d/1mubwfwnF7lvISdDbVpS3vMlq5WnJ75ik/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
@@ -80,19 +77,25 @@ export default function App() {
             >
               Cerrar Vista Previa
             </button>
-            {previewUrl.toLowerCase().endsWith('.pdf') || previewUrl.includes('drive.google.com') ? (
-              <div className="w-full h-full mt-10 overflow-auto flex justify-center">
-                <Document file={previewUrl.includes('drive.google.com') ? previewUrl.replace('/view', '/preview') : previewUrl}>
-                  <Page pageNumber={1} />
-                </Document>
-              </div>
-            ) : (
-              <iframe 
-                src={`https://docs.google.com/viewer?url=${encodeURIComponent(previewUrl)}&embedded=true`}
-                className="w-full h-full mt-10" 
-                title="Vista previa del documento"
-              />
-            )}
+            {(() => {
+              let finalUrl = previewUrl;
+              if (previewUrl.includes('docs.google.com/document')) {
+                finalUrl = previewUrl.split('?')[0].replace('/edit', '/preview');
+              } else if (previewUrl.includes('drive.google.com/file')) {
+                finalUrl = previewUrl.replace('/view', '/preview');
+              } else if (!previewUrl.toLowerCase().endsWith('.pdf')) {
+                finalUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(previewUrl)}&embedded=true`;
+              }
+
+              return (
+                <iframe 
+                  src={finalUrl}
+                  className="w-full h-full mt-10" 
+                  title="Vista previa del documento"
+                  frameBorder="0"
+                />
+              );
+            })()}
           </div>
         </div>
       )}
