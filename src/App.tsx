@@ -26,6 +26,7 @@ const proceduresData = [
   { id: 9, title: "Procedimientos Porteos Vacíos", category: "Almacén Patio", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Inspeccionar estado...", "Paso 2: Registrar salida..."], pdfUrl: "https://docs.google.com/document/d/1MRo5IdtP0gIQzJdYQ9pqkNTpB0Kl4HEF/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
   { id: 10, title: "Procedimientos Reefer", category: "Almacén Patio", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Conectar unidad...", "Paso 2: Verificar temperatura..."], pdfUrl: "https://docs.google.com/document/d/16jpKiHLLdeDIgBzqxd_BR4XR4x1ZDUze/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
   { id: 11, title: "Procedimientos Buffer", category: "Buffer", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Monitorear patio...", "Paso 2: Gestionar flujo..."], pdfUrl: "https://docs.google.com/document/d/1Joz_crZlhfv43EH2PyV3tM6moY-hWKCl/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
+  { id: 12, title: "Protocolo Despacho de Unidades SAG", category: "SAG", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Validar documentación de despacho...", "Paso 2: Inspeccionar unidades y verificar sellos SAG..."], pdfUrl: "https://docs.google.com/document/d/1Lwt5Eb9bpRTvG8PVSrSpszSvnbudlkSh/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
 ];
 
 const checklistsData = [
