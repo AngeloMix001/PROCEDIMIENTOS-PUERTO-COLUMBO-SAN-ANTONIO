@@ -27,6 +27,9 @@ const proceduresData = [
   { id: 10, title: "Procedimientos Reefer", category: "Almacén Patio", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Conectar unidad...", "Paso 2: Verificar temperatura..."], pdfUrl: "https://docs.google.com/document/d/16jpKiHLLdeDIgBzqxd_BR4XR4x1ZDUze/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
   { id: 11, title: "Procedimientos Buffer", category: "Buffer", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Monitorear patio...", "Paso 2: Gestionar flujo..."], pdfUrl: "https://docs.google.com/document/d/1Joz_crZlhfv43EH2PyV3tM6moY-hWKCl/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
   { id: 12, title: "Protocolo Despacho de Unidades SAG", category: "SAG", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Validar documentación de despacho...", "Paso 2: Inspeccionar unidades y verificar sellos SAG..."], pdfUrl: "https://docs.google.com/document/d/1Lwt5Eb9bpRTvG8PVSrSpszSvnbudlkSh/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
+  { id: 13, title: "Procedimiento Acuerdos Comerciales", category: "Área Comercial", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Gestionar cotizaciones...", "Paso 2: Registrar contratos de servicios..."], pdfUrl: "https://docs.google.com/document/d/1xyS6JuMp4xgBxDzdZXTepsz8BEzcfugF/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
+  { id: 14, title: "Procedimientos Área Comercial", category: "Área Comercial", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Establecer comunicación con clientes...", "Paso 2: Registrar solicitudes y coordinar con operaciones..."], pdfUrl: "https://docs.google.com/document/d/1-placeholder-comercial/edit?usp=sharing" },
+  { id: 15, title: "Procedimiento Customer Service", category: "Customer Service", date: "Actual", type: "procedure" as const, steps: ["Paso 1: Recepción de consultas de clientes...", "Paso 2: Canalización, gestión y seguimiento de requerimientos..."], pdfUrl: "https://docs.google.com/document/d/1hlLfLAFa637Znrt8oycVwLO1o_2KDM3L/edit?usp=sharing&ouid=115558709160216474718&rtpof=true&sd=true" },
 ];
 
 const checklistsData = [
@@ -41,6 +44,7 @@ const checklistsData = [
   { id: 9, title: "Check List Porteos Vacíos", category: "Almacén Patio", date: "Versión 001", type: "checklist" as const, steps: ["1. Inspeccionar daños...", "2. Registrar número contenedor..."], pdfUrl: "https://drive.google.com/file/d/1tU0PdUlXzr96mjbVxfvf9AC8m3sX6cAe/view?usp=drivesdk" },
   { id: 10, title: "Check List Reefer", category: "Almacén Patio", date: "Versión 001", type: "checklist" as const, steps: ["1. Verificar enchufe...", "2. Confirmar lectura temp..."], pdfUrl: "https://drive.google.com/file/d/1O3h0DCi87s1qbk9Uq_n2XxTtQgLq2p6q/view?usp=drivesdk" },
   { id: 11, title: "Check List Buffer", category: "Buffer", date: "Versión 001", type: "checklist" as const, steps: ["1. Verificar capacidad...", "2. Registrar movimientos..."], pdfUrl: "https://drive.google.com/file/d/1LjwECKR404wpl_2Dsdust7a79XGUukFh/view?usp=drivesdk" },
+  { id: 12, title: "Check List Área Comercial", category: "Área Comercial", date: "Versión 001", type: "checklist" as const, steps: ["1. Revisar requerimientos de clientes...", "2. Confirmar cotización autorizada..."], pdfUrl: "https://drive.google.com/file/d/1cPx-MXcLaV1XbuFXkIvry3JNwM20xUjN/view?usp=sharing" },
 ];
 
 export default function App() {
