@@ -1,6 +1,6 @@
 {
   "name": "Procedimientos SAI",
-  "description": "",
+  "description": "Sistema de Control Operativo de Puerto Columbo San Antonio: repositorio oficial de procedimientos y listas de chequeo operativo.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
